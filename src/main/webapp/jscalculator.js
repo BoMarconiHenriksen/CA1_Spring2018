@@ -1,3 +1,7 @@
 
-document.getElementById("buttons").onclick = getImage;
+document.getElementById("buttons").onclick = getButtonFunction;
+
+function getButtonFunction(e){
+    var i = 0;
+}
 
