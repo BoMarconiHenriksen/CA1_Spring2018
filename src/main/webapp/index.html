@@ -3,64 +3,45 @@
     <head>
         <title>Start Page</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        
-        <style>
-#container{
-	width: 226px;
-	height: 274px;
-	border: 3px solid darkblue;
-	margin: auto
-}
-.t1, .t4{
-	border: 1px solid black;
-	height: 48px;
-	margin-left: 3px;
-	margin-top: 3px;
-	display: inline-block;
-	text-align: center;
-	line-height: 48px;
-}
-.t1{
-	width: 48px;
-}
-.t4{
-	width: 219px;
-}
-</style>
 
     </head>
-    <body>
+    <body bgcolor="B8860B">
+    <center><br>
         <h1>Hello World!</h1>
         <h2>Calculator</h2>
-        
-        
-         
-      <div id="container">
-      <div id="display" class="t4"></div>
-      <div id="buttons">
-        <button class="t1">7</button>
-        <button class="t1">8</button>
-        <button class="t1">9</button>
-        <button class="t1">/</button>
 
-        <button class="t1">4</button>
-        <button class="t1">5</button>
-        <button class="t1">6</button>
-        <button class="t1">*</button>
-
-        <button class="t1">1</button>
-        <button class="t1">2</button>
-        <button class="t1">3</button>
-        <button class="t1">-</button>
-
-        <button class="t1">0</button>
-        <button class="t1">.</button>
-       <button class="t1">+</button>
-        <button class="t1">=</button>
-      </div>
-    </div>
- <script src="jscalculator.js"></script>
+        <hr size = 20 color ="black">
+        <div>
+        <form name ="Calculator">
+            <input name="display" placeholder ="0" style="widt: 254px; height: 60px; text-align: right; font-size: 30px; border-radius: 8px; margin: 3px;"/>
+            <br>
+            <input type ="button" value="7" onClick="document.Calculator.display.value += '7'" style="widt: 80px; height: 60px; font-size: 40px; border-radius: 8px; margin: 3px;"/>
+            <input type ="button" value="8" onClick="document.Calculator.display.value += '8'" style="widt: 80px; height: 60px; font-size: 40px; border-radius: 8px;"/>
+            <input type ="button" value="9" onClick="document.Calculator.display.value += '9'" style="widt: 80px; height: 60px; font-size: 40px; border-radius: 8px;"/>
+            <input type ="button" value="+" onClick="btnplus()" style="widt: 60px; height: 60px; font-size: 40px; border-radius: 8px;"/>
+            <br>
+            <input type ="button" value="4" onClick="document.Calculator.display.value += '4'" style="widt: 80px; height: 60px; font-size: 40px; border-radius: 8px; margin: 3px;"/>
+            <input type ="button" value="5" onClick="document.Calculator.display.value += '5'" style="widt: 80px; height: 60px; font-size: 40px; border-radius: 8px;"/>
+            <input type ="button" value="6" onClick="document.Calculator.display.value += '6'" style="widt: 80px; height: 60px; font-size: 40px; border-radius: 8px;"/>
+            <input type ="button" value="-" onClick="btnsubr()" style="widt: 60px; height: 60px; font-size: 30px; border-radius: 8px;"/>
+      <br>
+            <input type ="button" value="1" onClick="document.Calculator.display.value += '1'" style="widt: 80px; height: 60px; font-size: 40px; border-radius: 8px; margin: 3px;"/>
+            <input type ="button" value="2" onClick="document.Calculator.display.value += '2'" style="widt: 80px; height: 60px; font-size: 40px; border-radius: 8px;"/>
+            <input type ="button" value="3" onClick="document.Calculator.display.value += '3'" style="widt: 80px; height: 60px; font-size: 40px; border-radius: 8px;"/>
+            <input type ="button" value="*" onClick="btnmult()" style="widt: 60px; height: 60px; font-size: 30px; border-radius: 8px;"/>
+      <br>
+            <input type ="button" value="0" onClick="document.Calculator.display.value += '0'" style="widt: 80px; height: 60px; font-size: 40px; border-radius: 8px; margin: 3px;"/>
+            <input type ="button" value="%" onClick="btnmMod()" style="widt: 80px; height: 60px; font-size: 40px; border-radius: 8px;"/>
+            <input type ="button" value="." onClick="btndot()" style="widt: 80px; height: 60px; font-size: 40px; border-radius: 8px;"/>
+            <input type ="button" value="/" onClick="btndiv()" style="widt: 80px; height: 60px; font-size: 40px; border-radius: 8px;"/>
+      <br>
+      <input type ="button" value="=" onClick="document.Calculator.display.value = eval(document.Calculator.display.value)" style="widt: 120px; height: 60px; font-size: 40px; border-radius: 8px; margin: 3px;"/>
+      <input type ="button" value="C" onClick="btnclear()" style="widt: 140px; height: 60px; font-size: 40px; border-radius: 8px;"/>
+        </form>
+        </div>
+         <script src="jscalculator.js"></script>
+    </center>
     </body>
-   
+
 </html>
 
