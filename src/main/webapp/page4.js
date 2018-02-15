@@ -11,7 +11,6 @@
 var confirm = document.getElementById("confirmUserNo");
 var userNos = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 var obtain = document.getElementById("obtainViafetch");
-
 var userNo = document.getElementById("userNo");
 var getAllUsers = document.getElementById("getAllUsers");
 var showWhatYouveFetched =document.getElementById("show");
@@ -29,14 +28,6 @@ confirm.addEventListener("click", confirmFunction);
 getAllUsers.addEventListener("click", getAll);
 
 
-function createNode(element) {
-      return document.createElement(element);
-  }
-
-  function append(parent, el) {
-    return parent.appendChild(el);
-  }
-
 
 var confirmFunction = confirm.onclick = function () {
     fetch('https://jsonplaceholder.typicode.com/users/' + userNo.value + '').then(function(response) {
@@ -46,11 +37,6 @@ var confirmFunction = confirm.onclick = function () {
 })};
 
 
-  
-
- 
-  
-  
 var getAll = getAllUsers.onclick = function () {
 url = 'https://jsonplaceholder.typicode.com/users/';
 fetch(url).then(function(response) {
