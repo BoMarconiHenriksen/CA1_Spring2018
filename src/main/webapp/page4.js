@@ -30,16 +30,22 @@ getAllUsers.addEventListener("click", getAll);
 
 var getAll = getAllUsers.onclick = function () {
 
-    fetch('https://jsonplaceholder.typicode.com/users').then(function (response) {
+    fetch('https://jsonplaceholder.typicode.com/users/').then(function (response) {
         response.text().then(function (text) {
 
+            var myJSON = text;
 
-            showWhatYouveFetched.innerHTML = text;
+            var myObj = JSON.parse(myJSON);
+            for (x in myObj) {
+                showWhatYouveFetched.innerHTML += '<p>Name: ' + myObj[x].name + ' Phone:  ' + myObj[x].phone + '</p>';
+            }
         });
 
 
     });
-};
+
+}
+;
 
 var confirmFunction = confirm.onclick = function () {
     fetch('https://jsonplaceholder.typicode.com/users/' + userNo.value + '').then(function (response) {
@@ -47,12 +53,10 @@ var confirmFunction = confirm.onclick = function () {
 
             var myJSON = text;
             var myObj = JSON.parse(myJSON);
-            showWhatYouveFetched.innerHTML = '<li>Name: '+myObj.name+"</li>"+'<li>Phone: '+myObj.phone+"</li>"
-                    +"</li>\n"+"Address \n"+'<li>Street: '+myObj.address.street+"</li>"
-                    +'<li>City: '+myObj.address.city+"</li>\n"+'<li>Zip: '+myObj.address.zipcode+"</li>\n"
-                    +'<li>Geo(lat, lng): '+myObj.address.geo.lat+', '+myObj.address.geo.lng+"</li>\n"
-                    
-
+            showWhatYouveFetched.innerHTML = '<li>Name: ' + myObj.name + "</li>" + '<li>Phone: ' + myObj.phone + "</li>"
+                    + "</li>\n" + "Address \n" + '<li>Street: ' + myObj.address.street + "</li>"
+                    + '<li>City: ' + myObj.address.city + "</li>\n" + '<li>Zip: ' + myObj.address.zipcode + "</li>\n"
+                    + '<li>Geo(lat, lng): ' + myObj.address.geo.lat + ', ' + myObj.address.geo.lng + "</li>\n"
 
 
 
