@@ -15,6 +15,8 @@ var userNo = document.getElementById("userNo");
 var getAllUsers = document.getElementById("getAllUsers");
 var showWhatYouveFetched = document.getElementById("show");
 var url;
+
+var listToShow=document.getElementById("liste");
 //Creates a number select menu in the select tags id="userNo"
 for (var i = 0; i < userNos.length; i++) {
     var opt = document.createElement('option');
@@ -37,8 +39,11 @@ var getAll = getAllUsers.onclick = function () {
 
             var myObj = JSON.parse(myJSON);
             for (x in myObj) {
-                showWhatYouveFetched.innerHTML += '<p>Name: ' + myObj[x].name + ' Phone:  ' + myObj[x].phone + '</p>';
+                var list;
+             list+= '<tr><td>'+myObj[x].name + ' </td><td>' + myObj[x].phone+'</td></tr>';
             }
+            console.log(list);
+            listToShow.innerHTML='<tr><th>Name</th><th>Phone</th></tr>'+list+'';
         });
 
 
