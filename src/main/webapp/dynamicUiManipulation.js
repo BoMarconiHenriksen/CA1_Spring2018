@@ -2,33 +2,29 @@
 var boys = ["Peter", "lars", "Ole"];
 var girls = ["Janne", "hanne", "Sanne"];
 
-
-
-//Laver en ny liste. Tilføjer ul rundt om navnet og linjeskift.
-function newBoyList() {
-    var boysList = boys.map(function (name) {
+//Tilføjer ul omkring navnet og nyt linjeskift efter hvert navn.
+function makeUl(arrayList) {
+    unorderedList = arrayList.map(function (name) {
         return "<ul>" + name + "</ul>";
     }).join("\n");
-    return boysList;
+
+    return unorderedList;
 }
 
-function girlsListNew() {
-    var girlsList = girls.map(function (name) {
-        return "<ul>" + name + "</ul>";
-    }).join("\n");
-    return girlsList;
+//Metoden bruges til at tælle klik. Bruges til at skifte mellem asc og desc order ved sortering.
+var mouseClick = 0;
+function countClick() {
+    mouseClick += 1;
+    return mouseClick;
 }
 
 //Skriver listerne på index siden når siden loades.
-var boysList = document.getElementById("boys").innerHTML = newBoyList();
-var girlsList = document.getElementById("girls").innerHTML = girlsListNew();
+var boysList = document.getElementById("boys").innerHTML = makeUl(boys);
+var girlsList = document.getElementById("girls").innerHTML = makeUl(girls);
 document.getElementById("all").innerHTML = allPeopleList();
 
 //Bruges til at lægge de to lister sammen.
 function allPeopleList() {
-    var boysList = document.getElementById("boys").innerHTML = newBoyList();
-    var girlsList = document.getElementById("girls").innerHTML = girlsListNew();
-
     return allPeoples = boysList + girlsList;
 }
 
@@ -48,14 +44,14 @@ function getInputs(e) {
         //Tilføjer det nye navn nederst
         boys.push(newBoy);
         //Opdater listerne
-        document.getElementById("boys").innerHTML = newBoyList();
+        boysList = document.getElementById("boys").innerHTML = makeUl(boys);
         document.getElementById("all").innerHTML = allPeopleList();
 
     } else if (btn === "addgirl") {
 
         let newGirl = document.getElementById("newgirl").value;
         girls.push(newGirl);
-        document.getElementById("girls").innerHTML = girlsListNew();
+        girlsList = document.getElementById("girls").innerHTML = makeUl(girls);
         document.getElementById("all").innerHTML = allPeopleList();
 
     } else {
@@ -66,10 +62,12 @@ function getInputs(e) {
 
 document.getElementById("manipulateList").onclick = getManipulateInput;
 
+//Metoden fjerner boys eller girls i starten eller slutningen af listen.
+//Derudover sorter og reverser den også listerne.
 function getManipulateInput(e) {
     var firstRadioBtn = new Boolean(false);
     var lastRadioBtn = new Boolean(false);
-    
+
     let btnManipulate = e.target.id;
 
     //Hvis en radio button er checked er værdien true.
@@ -80,32 +78,94 @@ function getManipulateInput(e) {
     if (btnManipulate === "removeboy" && firstRadioBtn === true) {
         boys.shift();
 
+        //Opdater boysList og udskriver den nye liste
+        boysList = document.getElementById("boys").innerHTML = makeUl(boys);
         document.getElementById("all").innerHTML = allPeopleList();
-      
-      //Fjerner sidste boy i arrayet.
+
+        //Fjerner sidste boy i arrayet.
     } else if (btnManipulate === "removeboy" && lastRadioBtn === true) {
         boys.pop();
 
+        //Opdater boysList og udskriver den nye liste
+        boysList = document.getElementById("boys").innerHTML = makeUl(boys);
         document.getElementById("all").innerHTML = allPeopleList();
-      
-      //Fjerner første girl i arrayet.
+
+        //Fjerner første girl i arrayet.
     } else if (btnManipulate === "removegirl" && firstRadioBtn === true) {
         girls.shift();
 
+        //Opdater girlsList og udskriver den nye liste
+        girlsList = document.getElementById("girls").innerHTML = makeUl(girls);
         document.getElementById("all").innerHTML = allPeopleList();
-      
-      //Fjerner sidste girl i arrayet.  
+
+        //Fjerner sidste girl i arrayet.  
     } else if (btnManipulate === "removegirl" && lastRadioBtn === true) {
         girls.pop();
 
+        //Opdater girlsList og udskriver den nye liste
+        girlsList = document.getElementById("girls").innerHTML = makeUl(girls);
         document.getElementById("all").innerHTML = allPeopleList();
-        
+
+        //All listen reverses.  
+    } else if (btnManipulate === "reverse") {
+        var allPeople = boys.concat(girls);
+
+        var counterClick = countClick();
+        console.log(counterClick);
+        if (counterClick % 2 === 1) {
+            var nyListe = allPeople;
+            var reversedAllPeople = nyListe.reverse();
+            var reversedList = makeUl(reversedAllPeople);
+
+            document.getElementById("all").innerHTML = reversedList;
+        } else if(counterClick % 2 === 0) {
+            console.log("Hej");
+            console.log("allPeople: " + nyListe);
+            var nyListe = allPeople;
+            var newReverse = nyListe.reverse();
+            console.log(newReverse);
+            var a = makeUl(newReverse);
+            
+            document.getElementById("all").innerHTML = a;
+            
+        }
+
+
+
+        //Sorter all listen.
+    } else if (btnManipulate === "sort") {
+        var allPeopleSort = boys.concat(girls);
+
+        //antal klik
+        var counterClick = countClick();
+
+        if (counterClick % 2 === 1) {
+
+            allPeopleSort.sort(function (word1, word2) {
+                return word1.toLowerCase().localeCompare(word2.toLowerCase());
+            });
+
+            let ascSortedList = makeUl(allPeopleSort);
+
+            document.getElementById("all").innerHTML = ascSortedList;
+        } else if (counterClick % 2 === 0) {
+
+            //Samme sorterings algoritme bare byttet om på word1 og word2.
+            allPeopleSort.sort(function (word1, word2) {
+                return word2.toLowerCase().localeCompare(word1.toLowerCase());
+            });
+
+            let descSortedList = makeUl(allPeopleSort);
+
+            document.getElementById("all").innerHTML = descSortedList;
+        }
+
     } else {
         console.log("Der opstod en fejl i manipulateList()");
     }
-
-
 }
+
+
 
 
 
