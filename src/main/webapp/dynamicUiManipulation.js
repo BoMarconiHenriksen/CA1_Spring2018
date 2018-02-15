@@ -42,8 +42,12 @@ function getInputs(e) {
 
         //Henter den indtastet værdi
         let newBoy = document.getElementById("newboy").value;
-        //Tilføjer det nye navn nederst
+        //Tilføjer det nye navn sidst i arrayet.
         boys.push(newBoy);
+        
+        //Opdater det globale array eller kan der ikke reverses.
+        peoplesAsArray = boys.concat(girls);
+        
         //Opdater listerne
         boysList = document.getElementById("boys").innerHTML = makeUl(boys);
         document.getElementById("all").innerHTML = allPeopleList();
@@ -52,6 +56,10 @@ function getInputs(e) {
 
         let newGirl = document.getElementById("newgirl").value;
         girls.push(newGirl);
+        
+        //Opdater det globale array eller kan der ikke reverses.
+        peoplesAsArray = boys.concat(girls);
+        
         girlsList = document.getElementById("girls").innerHTML = makeUl(girls);
         document.getElementById("all").innerHTML = allPeopleList();
 
