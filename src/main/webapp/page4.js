@@ -41,7 +41,8 @@ var getAll = getAllUsers.onclick = function () {
                 list += '<tr><td>' + myObj[x].name + ' </td><td>' + myObj[x].phone + '</td></tr>';
             }
 
-            showWhatYouveFetched.innerHTML = '<table><tr><th>Name</th><th>Phone</th></tr>' + list + '</table>';
+            showWhatYouveFetched.innerHTML = '<h3>List of Users</h3><table><tr><th>Name</th><th>Phone</th></tr>' + list + '</table>';
+            
         });
     });
 };
@@ -53,7 +54,7 @@ var confirmFunction = confirm.onclick = function () {
             var myJSON = text;
             var myObj = JSON.parse(myJSON);
             showWhatYouveFetched.innerHTML = '<li>Name: ' + myObj.name + "</li>" + '<li>Phone: ' + myObj.phone + "</li>"
-                    + "</li>\n" + "Address \n" + '<li>Street: ' + myObj.address.street + "</li>"
+                    + "</li><br>" + "Address \n" + '<li>Street: ' + myObj.address.street + "</li>"
                     + '<li>City: ' + myObj.address.city + "</li>\n" + '<li>Zip: ' + myObj.address.zipcode + "</li>\n"
                     + '<li>Geo(lat, lng): ' + myObj.address.geo.lat + ', ' + myObj.address.geo.lng + "</li>\n"
 
