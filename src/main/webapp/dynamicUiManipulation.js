@@ -85,6 +85,9 @@ function getManipulateInput(e) {
     //Fjerner første boy i arrayet.
     if (btnManipulate === "removeboy" && firstRadioBtn === true) {
         boys.shift();
+        
+        //Opdater det globale array eller kan der ikke reverses.
+        peoplesAsArray = boys.concat(girls);
 
         //Opdater boysList og udskriver den nye liste
         boysList = document.getElementById("boys").innerHTML = makeUl(boys);
@@ -93,6 +96,9 @@ function getManipulateInput(e) {
         //Fjerner sidste boy i arrayet.
     } else if (btnManipulate === "removeboy" && lastRadioBtn === true) {
         boys.pop();
+        
+        //Opdater det globale array eller kan der ikke reverses.
+        peoplesAsArray = boys.concat(girls);
 
         //Opdater boysList og udskriver den nye liste
         boysList = document.getElementById("boys").innerHTML = makeUl(boys);
@@ -101,6 +107,9 @@ function getManipulateInput(e) {
         //Fjerner første girl i arrayet.
     } else if (btnManipulate === "removegirl" && firstRadioBtn === true) {
         girls.shift();
+        
+        //Opdater det globale array eller kan der ikke reverses.
+        peoplesAsArray = boys.concat(girls);
 
         //Opdater girlsList og udskriver den nye liste
         girlsList = document.getElementById("girls").innerHTML = makeUl(girls);
@@ -109,6 +118,9 @@ function getManipulateInput(e) {
         //Fjerner sidste girl i arrayet.  
     } else if (btnManipulate === "removegirl" && lastRadioBtn === true) {
         girls.pop();
+        
+        //Opdater det globale array eller kan der ikke reverses.
+        peoplesAsArray = boys.concat(girls);
 
         //Opdater girlsList og udskriver den nye liste
         girlsList = document.getElementById("girls").innerHTML = makeUl(girls);
