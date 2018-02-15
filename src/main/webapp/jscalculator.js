@@ -27,3 +27,6 @@ function btnclear() {
     document.Calculator.display.value = "";
     document.Calculator.display.style.textAlign = "right";
 }
+
+// Kilde: https://www.youtube.com/watch?v=lcvbzAzvRSY
+
