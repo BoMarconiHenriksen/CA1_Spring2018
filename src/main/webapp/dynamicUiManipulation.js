@@ -21,7 +21,8 @@ function countClick() {
 //Skriver listerne på index siden når siden loades.
 var boysList = document.getElementById("boys").innerHTML = makeUl(boys);
 var girlsList = document.getElementById("girls").innerHTML = makeUl(girls);
-document.getElementById("all").innerHTML = allPeopleList();
+var allPropleAsString = document.getElementById("all").innerHTML = allPeopleList();
+var peoplesAsArray = boys.concat(girls);
 
 //Bruges til at lægge de to lister sammen.
 function allPeopleList() {
@@ -57,7 +58,6 @@ function getInputs(e) {
     } else {
         console.log("Fejl i getInput()");
     }
-
 }
 
 document.getElementById("manipulateList").onclick = getManipulateInput;
@@ -108,29 +108,10 @@ function getManipulateInput(e) {
 
         //All listen reverses.  
     } else if (btnManipulate === "reverse") {
-        var allPeople = boys.concat(girls);
+        var reversedAllPeople = peoplesAsArray.reverse();
+        var reversedList = makeUl(reversedAllPeople);
 
-        var counterClick = countClick();
-        console.log(counterClick);
-        if (counterClick % 2 === 1) {
-            var nyListe = allPeople;
-            var reversedAllPeople = nyListe.reverse();
-            var reversedList = makeUl(reversedAllPeople);
-
-            document.getElementById("all").innerHTML = reversedList;
-        } else if(counterClick % 2 === 0) {
-            console.log("Hej");
-            console.log("allPeople: " + nyListe);
-            var nyListe = allPeople;
-            var newReverse = nyListe.reverse();
-            console.log(newReverse);
-            var a = makeUl(newReverse);
-            
-            document.getElementById("all").innerHTML = a;
-            
-        }
-
-
+        document.getElementById("all").innerHTML = reversedList;
 
         //Sorter all listen.
     } else if (btnManipulate === "sort") {
@@ -145,6 +126,9 @@ function getManipulateInput(e) {
                 return word1.toLowerCase().localeCompare(word2.toLowerCase());
             });
 
+            //Opdater global
+            peoplesAsArray = allPeopleSort;
+
             let ascSortedList = makeUl(allPeopleSort);
 
             document.getElementById("all").innerHTML = ascSortedList;
@@ -154,6 +138,9 @@ function getManipulateInput(e) {
             allPeopleSort.sort(function (word1, word2) {
                 return word2.toLowerCase().localeCompare(word1.toLowerCase());
             });
+
+            //Opdater globalt
+            peoplesAsArray = allPeopleSort;
 
             let descSortedList = makeUl(allPeopleSort);
 
