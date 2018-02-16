@@ -9,49 +9,65 @@ and open the template in the editor.
 */
 
 table{
-   font-family: "Trebuchet MS", Verdana, Helvetica, sans-serif;
-   font-size: 12px;
+
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size: 11px;
     border-collapse: collapse;
-    width: 60%;
+ 
+    table-layout: fixed;
+/*    border-left-color: white;
+    border-right-color: white;*/
+
+}
+
+
+th{
+
+    text-align: left;  
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 0;
+    padding-right: 0;
+
     
 }
 
-th{
-    
-       border: 1px solid #ddd;
-    padding: 8px;
-    text-align: left;  
-    border-color: lightgrey;
-     padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
-    background-color: grey;
-    color: white;
-}
 
 
 
 td{
-    
+
+
     text-align: left;  
-   border: 1px solid #ddd;
-    padding: 8px;
-    border-color: lightgrey;
+    color: grey;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 0;
+    padding-right: 0;
 }
+
+
+
+
 
 tr{
 
     border-style: solid;
     border-color: lightgrey;
+
 }
 
 
 tr:hover {
     background-color: #ddd;
 }
- tr:nth-child(uneven){background-color: #f2f2f2;}
+
+tr:nth-child(uneven){background-color: #f2f2f2;}
+
+
  
  
  ul {
+
     list-style-type: none;
 }
