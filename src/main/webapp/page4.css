@@ -22,8 +22,6 @@ table{
 
 th{
 
-
-
     text-align: left;  
     padding-top: 8px;
     padding-bottom: 8px;
@@ -43,9 +41,7 @@ td{
     padding-right: 0;
 }
 
-div{
-    background-color: blue;
-}
+
 
 tr{
     padding-top: 8px;
@@ -54,7 +50,7 @@ tr{
     padding-right: 0;
     border-style: solid;
     border-color: lightgrey;
-      border-left-color: white;
+    border-left-color: white;
     border-right-color: white;
 }
 

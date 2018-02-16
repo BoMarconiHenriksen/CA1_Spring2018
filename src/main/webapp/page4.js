@@ -6,7 +6,7 @@ var userNos = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 var userNo = document.getElementById("userNo");
 var getAllUsers = document.getElementById("getAllUsers");
 var showWhatYouveFetched = document.getElementById("show");
-var list;
+
 
 //Creates a number select menu in the select tags id="userNo"
 for (var i = 0; i < userNos.length; i++) {
@@ -26,6 +26,7 @@ getAllUsers.addEventListener("click", getAll);
 var getAll = getAllUsers.onclick = function () {
 
     fetch('https://jsonplaceholder.typicode.com/users/').then(function (response) {
+       let list="";
         response.text().then(function (text) {
             var myJSON = text;
             var myObj = JSON.parse(myJSON);
