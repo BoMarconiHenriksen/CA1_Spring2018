@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Ejer
  */
-@WebServlet(urlPatterns = {"/PersistentCookieDemo"})
+@WebServlet( name="PersistentCookieDemo", urlPatterns = {"/PersistentCookieDemo"})
 public class PersistentCookieDemo extends HttpServlet {
 
     /**
