@@ -12,7 +12,7 @@ table{
     font-family: Verdana, Helvetica, sans-serif;
     font-size: 11px;
     border-collapse: collapse;
-    width: 60%;
+ 
     table-layout: fixed;
 /*    border-left-color: white;
     border-right-color: white;*/
@@ -41,6 +41,10 @@ td{
     padding-bottom: 8px;
     padding-left: 0;
     padding-right: 0;
+}
+
+div{
+    background-color: blue;
 }
 
 tr{
