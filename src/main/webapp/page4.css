@@ -1,14 +1,11 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
+
 /* 
     Created on : 15-02-2018, 19:50:41
     Author     : Ejer
 */
 
 table{
+
     font-family: Verdana, Helvetica, sans-serif;
     font-size: 11px;
     border-collapse: collapse;
@@ -43,6 +40,7 @@ td{
 
 
 
+
 tr{
     padding-top: 8px;
     padding-bottom: 8px;
@@ -52,15 +50,20 @@ tr{
     border-color: lightgrey;
     border-left-color: white;
     border-right-color: white;
+
 }
+
 
 
 tr:hover {
     background-color: #ddd;
 }
+
 tr:nth-child(uneven){background-color: #f2f2f2;}
 
+ 
+ 
+ ul {
 
-ul {
     list-style-type: none;
 }
