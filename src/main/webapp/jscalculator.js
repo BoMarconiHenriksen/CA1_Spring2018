@@ -35,7 +35,8 @@ document.getElementById("buttons").onclick = getNumber;
 
 function getNumber(e){
     var btn = e.target.innerText;
-    console.log(e);
+    console.log(e.target);
+    document.getElementById("display").innerHTML = e.target.innerText;
     }
     
     
