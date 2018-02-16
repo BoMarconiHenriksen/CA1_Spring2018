@@ -30,3 +30,12 @@ function btnclear() {
 
 // Kilde: https://www.youtube.com/watch?v=lcvbzAzvRSY
 
+
+document.getElementById("buttons").onclick = getNumber;
+
+function getNumber(e){
+    var btn = e.target.innerText;
+    console.log(e);
+    }
+    
+    
