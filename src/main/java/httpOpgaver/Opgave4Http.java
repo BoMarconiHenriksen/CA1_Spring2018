@@ -7,6 +7,7 @@ package httpOpgaver;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.Enumeration;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -37,10 +38,35 @@ public class Opgave4Http extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet Opgave4Http</title>");            
+            out.println("<title>Servlet ChrServlet</title>");  
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet Opgave4Http at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet ChrServlet at " + request.getContextPath() + "</h1>");
+            out.println("<p>Christian Lykke - datamariker, "
+                    + "3. sem, uge 3 - aflevering HTTPExercises - opg.4 "
+                    + "(Get HTTP Request Headers on the Server ) filer: 1 servlet</p>");
+            out.println("<p></p>");
+            
+            Enumeration<String> allHeaders = request.getHeaderNames();
+            while(allHeaders.hasMoreElements()) {
+                String currentHead = allHeaders.nextElement();
+                String output = request.getHeader(currentHead);
+                out.println("<p>");
+                out.println("currentHead: ");
+                out.println(currentHead);
+                int myspace = 25 - currentHead.length();
+                for (int i = 0; i < myspace; i++) {
+                    out.println("&nbsp");
+                }
+                out.println(" result: "+output);
+                out.println("</p>");
+            }
+            
+            //String xxx = request.getHeader("accept");
+            //out.println(xxx);
+            
+            
+            
             out.println("</body>");
             out.println("</html>");
         }
