@@ -9,6 +9,7 @@ and open the template in the editor.
 */
 
 table{
+
     font-family: Verdana, Helvetica, sans-serif;
     font-size: 11px;
     border-collapse: collapse;
@@ -27,11 +28,15 @@ th{
     padding-bottom: 8px;
     padding-left: 0;
     padding-right: 0;
+
+    
 }
 
 
 
+
 td{
+
 
     text-align: left;  
     color: grey;
@@ -43,24 +48,26 @@ td{
 
 
 
+
+
 tr{
-    padding-top: 8px;
-    padding-bottom: 8px;
-    padding-left: 0;
-    padding-right: 0;
+
     border-style: solid;
     border-color: lightgrey;
-    border-left-color: white;
-    border-right-color: white;
+
 }
 
 
 tr:hover {
     background-color: #ddd;
 }
+
 tr:nth-child(uneven){background-color: #f2f2f2;}
 
 
-ul {
+ 
+ 
+ ul {
+
     list-style-type: none;
 }
