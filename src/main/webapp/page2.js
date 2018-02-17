@@ -46,6 +46,7 @@ document.getElementById("myclock").innerHTML = "0000000.0";
 
 function timer() {
 	if (scriptHasFinished == true) {
+       
 		clearInterval(clockScript);
 		
 	}
