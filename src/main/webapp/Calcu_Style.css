@@ -7,7 +7,24 @@ and open the template in the editor.
     Created on : 16-02-2018, 10:07:35
     Author     : Ticondrus
 */
+html {
+  box-sizing: border-box;
+  -ms-overflow-style: scrollbar;
+}
 
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+.container {
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 15px;
+  padding-left: 15px;
+  width: 100%;
+}
 .numStyle{
     width: 60px; height: 60px; font-size: 40px; margin: 3px; border-radius: 10px;
 }
@@ -32,13 +49,19 @@ and open the template in the editor.
     padding: 2em;
     height: 90vh;
     justify-content: center;
-    align-items: middle;
+    align-items:center;
 }
 
-.clockbox,
+
+  .clockbox,
 #clock {
-    width: 100%;
+    width: 25%;
+   position:absolute;
+   align-content: center;
+   margin-right: 10%;
+  margin-left: 50%;
 }
+
 
 /* Clock styles */
 .circle {
@@ -91,4 +114,10 @@ and open the template in the editor.
 #second {
     transform-origin: 300px 300px;
     transition: transform .5s ease-in-out;
+}
+
+body {
+    background-color: #00ffff;
+    align-content: center;
+        
 }
