@@ -60,6 +60,9 @@ public class PersistentCookieDemo extends HttpServlet {
                 out.println("<input type='input' name='name'>");
                 out.println("<input type='submit'></form>");
             }
+             out.println("<div id='show'> </div>");
+
+
             out.println("</body>");
             out.println("</html>");
         }

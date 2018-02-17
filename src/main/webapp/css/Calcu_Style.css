@@ -1,0 +1,125 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 16-02-2018, 10:07:35
+    Author     : Ticondrus
+*/
+html {
+  box-sizing: border-box;
+  -ms-overflow-style: scrollbar;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+
+.numStyle{
+    width: 60px; height: 60px; font-size: 40px; margin: 3px; border-radius: 10px;
+}
+
+.numStyleEquals{
+    width: 120px; height: 60px; font-size: 40px; border-radius: 8px; margin: 3px;
+}
+
+.numStyleDisplay{
+    width: 254px; height: 60px; text-align: right; font-size: 30px; margin: 3px;
+}
+
+.flex-container {
+ background-color: #ddd;
+ width: 20%;
+ height: 450px;
+}
+
+/* Layout */
+.main {
+    display: flex;
+    padding: 2em;
+    height: 90vh;
+    justify-content: center;
+    align-items:center;
+}
+
+.container2 {
+     margin-left: 33%;
+     margin-top: 5%;
+border-bottom-color: black;
+  padding-right: 10px;
+  padding-left: 15px;
+  width: 100%;
+   position:absolute;
+}
+  .clockbox,
+#clock {
+    width: 30%;
+   align-content: left;
+
+}
+
+
+/* Clock styles */
+.circle {
+    fill: lavender;
+    stroke: #000;
+    stroke-width: 9;
+    stroke-miterlimit: 10;
+}
+
+.mid-circle {
+    fill: #000;
+
+}
+.hour-marks {
+    fill: none;
+    stroke: #000;
+    stroke-width: 9;
+    stroke-miterlimit: 10;
+}
+
+.hour-arm {
+    fill: none;
+    stroke: #000;
+    stroke-width: 17;
+    stroke-miterlimit: 10;
+}
+
+.minute-arm {
+    fill: none;
+    stroke: #000;
+    stroke-width: 11;
+    stroke-miterlimit: 10;
+}
+
+.second-arm {
+    fill: none;
+    stroke: #000;
+    stroke-width: 4;
+    stroke-miterlimit: 10;
+}
+
+/* Transparent box ensuring arms center properly. */
+.sizing-box {
+    fill: none;
+}
+
+/* Make all arms rotate around the same center point. */
+/* Optional: Use transition for animation. */
+#hour,
+#minute,
+#second {
+    transform-origin: 300px 300px;
+    transition: transform .5s ease-in-out;
+}
+
+body {
+    background-color: #ffffff;
+    align-content: center;
+        
+}
+
