@@ -7,6 +7,12 @@ and open the template in the editor.
     Created on : 15-02-2018, 19:50:41
     Author     : Ejer
 */
+body{ 
+     margin-left: 10%;
+     margin-right: 10%;
+      width:60%;
+      background-color: whitesmoke;
+}
 
 table{
 

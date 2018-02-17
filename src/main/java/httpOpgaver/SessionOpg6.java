@@ -9,7 +9,6 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -53,7 +52,7 @@ public class SessionOpg6 extends HttpServlet {
         out.println("<p> Welcome " + name  + " !</p>");
       } else {
         out.println("<h2>Please enter your name, and submit</h2>");
-        out.println("<form action='SessionDemo'>");
+        out.println("<form action='SessionOpg6'>");
         out.println("<input type='input' name='name'>");
         out.println("<input type='submit'></form>");
       }
