@@ -4,18 +4,17 @@ To change this template file, choose Tools | Templates
 and open the template in the editor.
 */
 /* 
-    Created on : 17-02-2018, 19:44:44
+    Created on : 18-02-2018, 00:39:33
     Author     : Ejer
 */
 
-  #container3{
-    
+#container{
     width: 226px;
-    height: 332px;
+    height: 274px;
     border: 3px solid darkblue;
     margin: auto
 }
-.t1,.t2, .t4{
+.t1, .t4{
     border: 1px solid black;
     height: 48px;
     margin-left: 3px;
@@ -24,12 +23,9 @@ and open the template in the editor.
     text-align: center;
     line-height: 48px;
 }
-.t1,.t2{
+.t1{
     width: 48px;
 }
 .t4{
     width: 219px;
-}
-.resize{
-   width: 150%;
 }

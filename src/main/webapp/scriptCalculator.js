@@ -17,25 +17,31 @@ equals.addEventListener('click', getResult);
 
 
 function  getEntry(e) {
-if (e.target.innerText==='='){
+   
+if (e.target.innerText=='='){
     
-}else{
+    }
+    else{
     console.log(e.target.innerText);
     document.getElementById("display").innerHTML = e.target.innerText;
     entries.push(e.target.innerText);
+    document.getElementById("display").innerHTML = entries.join('');
     console.log(entries);
 
-}
-}
-;
+}};
 
 function getResult() {
+    try{
+  
     result = (entries.join('') + ' = ' + eval(entries.join('')));
     document.getElementById("display").innerHTML = result;
 
     console.log(result);
-    entries = [];
-
+  
+    }catch(ex){
+         document.getElementById("display").innerHTML = '<i>E</i>   '+ex.message+'   press clear';
+    }
+ 
 
 
 }
