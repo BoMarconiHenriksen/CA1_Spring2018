@@ -8,7 +8,8 @@
     <packaging>war</packaging>
 
 
-    <name>CA1_Spring2018</name>
+   <name>CA1_Spring2018</name>
+
 
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>

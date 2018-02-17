@@ -1,13 +1,48 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Start Page</title>
+        <title>Course Assignment 1</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
+        <link href="Calcu_Style.css" rel="stylesheet" type="text/css"/>
+
     </head>
-    <body bgcolor="#00ffff">
-        <h1>Page 0</h1>
-        <h2>Start page</h2>
+    <body >
+        <div class="container">
+              <div class="clockbox">
+            <svg id="clock" xmlns="http://www.w3.org/2000/svg" width="300" height="300" viewBox="0 0 600 600">
+            <g id="face">
+            <circle class="circle" cx="300" cy="300" r="253.9"/>
+            <path class="hour-marks" d="M300.5 94V61M506 300.5h32M300.5 506v33M94 300.5H60M411.3 107.8l7.9-13.8M493 190.2l13-7.4M492.1 411.4l16.5 9.5M411 492.3l8.9 15.3M189 492.3l-9.2 15.9M107.7 411L93 419.5M107.5 189.3l-17.1-9.9M188.1 108.2l-9-15.6"/>
+            <circle class="mid-circle" cx="300" cy="300" r="16.2"/>
+            </g>
+            <g id="hour">
+            <path class="hour-arm" d="M300.5 298V142"/>
+            <circle class="sizing-box" cx="100" cy="100" r="84.6333"/>
+            </g>
+            <g id="minute">
+            <path class="minute-arm" d="M300.5 298V67"/>
+            <circle class="sizing-box" cx="100" cy="100" r="84.6333"/>
+            </g>
+            <g id="second">
+            <path class="second-arm" d="M300.5 350V55"/>
+            <circle class="sizing-box" cx="100" cy="100" r="84.6333"/>
+            </g>
+            </svg>
+        </div>
+            </div>
+            <h1>Course Assignment 1</h1>
+        <script src="jswatch.js" defer></script>
+     
+
+        
+        <h2>Basic JavaScript, DOM manipulation and Hosting</h2>
+        <p>Opgaven består af et par statiske html sider, med tilhørende javaScript.</p>
+        <p>Derudover er der også et par http opgaver.</p>
+        <br>
+
+      
+        <br>
 
 
         <div>
@@ -19,15 +54,18 @@
             <br>
             <button type="button" style="background-color: buttonface" onclick="location.href = 'page1_ndCalculator.html';">Page 1 Calculator Javascript test</button>
             <br>
+            <button type="button" style="background-color: buttonface" onclick="location.href = 'page2.html';">Page 2</button>
+            <br>
             <button type="button" style="background-color: buttonface" onclick="location.href = 'page3.html';">Page 3</button>
             <br>
-            <button type="button" style="background-color: buttonface" onclick="location.href = 'page4 - Dynamic UI manipulation with data obtained via fetch.html';">Page 4</button>
+            <button type="button" style="background-color: buttonface" onclick="location.href = 'page4.html';">Page 4</button>
             <br>
-            <button type="button" style="background-color: buttonface" onclick="location.href = '';">Page 1 Calculator</button>
+            <!--<button type="button" style="background-color: buttonface" onclick="location.href = '';">Page 1 Calculator</button>-->
 
         </div>
         <br>
-        <h2>Http-excersizes</h2>
+        <br>
+        <h2>Http-excercises</h2>
         <div>
             <form action="Opgave4Http">
                 <input type="submit" name="http4" value="Http4" >
@@ -43,8 +81,8 @@
                 <input type="submit" name="http7" value="Http7" >
 
             </form>
-            
-             
+
+
 
         </div>
 
