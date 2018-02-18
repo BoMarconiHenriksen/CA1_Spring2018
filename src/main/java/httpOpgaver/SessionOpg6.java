@@ -7,7 +7,6 @@ package httpOpgaver;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Enumeration;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -18,8 +17,8 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author Bo
  */
-@WebServlet(name = "Opgave4Http", urlPatterns = {"/Opgave4Http"})
-public class Opgave4Http extends HttpServlet {
+@WebServlet(name = "SessionOpg6", urlPatterns = {"/SessionOpg6"})
+public class SessionOpg6 extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -33,44 +32,35 @@ public class Opgave4Http extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet ChrServlet</title>");  
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet ChrServlet at " + request.getContextPath() + "</h1>");
-            out.println("<p>Christian Lykke - datamariker, "
-                    + "3. sem, uge 3 - aflevering HTTPExercises - opg.4 "
-                    + "(Get HTTP Request Headers on the Server ) filer: 1 servlet</p>");
-            out.println("<p></p>");
-            
-            Enumeration<String> allHeaders = request.getHeaderNames();
-            while(allHeaders.hasMoreElements()) {
-                String currentHead = allHeaders.nextElement();
-                String output = request.getHeader(currentHead);
-                out.println("<p>");
-                out.println("currentHead: ");
-                out.println(currentHead);
-                int myspace = 25 - currentHead.length();
-                for (int i = 0; i < myspace; i++) {
-                    out.println("&nbsp");
-                }
-                out.println(" result: "+output);
-                out.println("</p>");
-            }
-            
-            //String xxx = request.getHeader("accept");
-            //out.println(xxx);
-            
-            
-            
-            out.println("</body>");
-            out.println("</html>");
-        }
+
+         String name = request.getParameter("name");
+    if (name != null) {
+      request.getSession().setAttribute("name", name);
+    } else {
+      name = (String) request.getSession().getAttribute("name");
     }
+    response.setContentType("text/html;charset=UTF-8");
+    try (PrintWriter out = response.getWriter()) {
+      out.println("<!DOCTYPE html>");
+      out.println("<html>");
+      out.println("<head>");
+      out.println("<title>Servlet SessionDemo</title>");
+      out.println("</head>");
+      out.println("<body>");
+      if (name != null) {
+        name = (String)request.getSession().getAttribute("name");
+        out.println("<p> Welcome " + name  + " !</p>");
+      } else {
+        out.println("<h2>Please enter your name, and submit</h2>");
+        out.println("<form action='SessionOpg6'>");
+        out.println("<input type='input' name='name'>");
+        out.println("<input type='submit'></form>");
+      }
+      out.println("</body>");
+      out.println("</html>");
+    }
+  }
+
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

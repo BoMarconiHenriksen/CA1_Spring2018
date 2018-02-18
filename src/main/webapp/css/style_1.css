@@ -1,0 +1,29 @@
+body{ 
+     margin-left: 10%;
+     margin-right: 10%;
+      width:60%;
+      background-color: whitesmoke;
+}
+
+
+h1 {
+    text-align: justify;
+}
+h2 {
+    color: steelblue;
+}
+
+h3 {
+    color: steelblue;
+    margin-top: 0px;
+    margin-bottom: 1em;
+}
+
+.container {
+    font-family:sans-serif; 
+    margin:auto;width:60%;
+}
+
+.bottombou{
+      margin-bottom: 0px;
+}
