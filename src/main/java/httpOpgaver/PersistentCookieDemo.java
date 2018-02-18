@@ -32,7 +32,7 @@ public class PersistentCookieDemo extends HttpServlet {
         String name = request.getParameter("name");
         if (name != null) {
             Cookie cookie = new Cookie("username", name);
-            cookie.setMaxAge(60 );
+            cookie.setMaxAge(60*60*24 );
             response.addCookie(cookie);
         }
         Cookie[] cookies = request.getCookies();
@@ -61,8 +61,6 @@ public class PersistentCookieDemo extends HttpServlet {
                 out.println("<input type='submit'></form>");
             }
              out.println("<div id='show'> </div>");
-
-
             out.println("</body>");
             out.println("</html>");
         }
