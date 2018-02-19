@@ -31,7 +31,7 @@ function allPeopleList() {
 
 //Uden parenteser på getImage pga det er en reference.
 //Henter input fra klik.
-document.getElementById("btns").onclick = getInputs;
+document.getElementById("btns").addEventListener("click", getInputs);
 
 //Tilføjer boy eller girl, og opdater listerne
 function getInputs(e) {
@@ -68,7 +68,7 @@ function getInputs(e) {
     }
 }
 
-document.getElementById("manipulateList").onclick = getManipulateInput;
+document.getElementById("manipulateList").addEventListener("click", getManipulateInput);
 
 //Metoden fjerner boys eller girls i starten eller slutningen af listen.
 //Derudover sorter og reverser den også listerne.
